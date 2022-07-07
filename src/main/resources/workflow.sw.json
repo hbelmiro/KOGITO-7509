@@ -1,0 +1,28 @@
+{
+  "id": "greeting",
+  "version": "1.0",
+  "specVersion": "0.8",
+  "name": "Greeting Workflow",
+  "description": "Greet Someone",
+  "start": "Greet",
+  "functions": [
+    {
+      "name": "hello",
+      "operation": "openapi.yaml#hello"
+    }
+  ],
+  "states":[
+    {
+      "name":"Greet",
+      "type":"operation",
+      "actions":[
+        {
+          "functionRef": {
+            "refName": "hello"
+          }
+        }
+      ],
+      "end": true
+    }
+  ]
+}
